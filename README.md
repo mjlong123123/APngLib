@@ -1,13 +1,14 @@
 # APnglibrary
 Play apng library in android app
 
-#Summary
+# Summary
+
 1.Decode apng with pngj library.
 2.Play the apng file as streaming.
 3.Do not cache all frames when playing apng.It only cache previous/current/next frames.So it coast less memory.
 4.Different ImageVeiw can use shared one APngHolder. One APngHolder hold one apng file.
 
-#How to integrate?
+# How to integrate?
 
 1.Clone APnglibrary as submodule.
 
@@ -24,6 +25,7 @@ dependencies {
 
 3.Play the apng file in assets
 
+'''
 imageView.playAPngAsset(this, "blued.png", object : AnimationCallback {
                 override fun onAnimationStart(drawable: APngDrawable) {
                     Log.d("APngActivity", "onAnimationStart ${drawable.file}")
@@ -38,6 +40,8 @@ imageView.playAPngAsset(this, "blued.png", object : AnimationCallback {
                     Log.d("APngActivity", "onAnimationCanceled ${drawable.file}")
                 }
             })
+	    
+'''
 
 4.Play the apng file in sdcard
 
