@@ -12,83 +12,82 @@ Play apng library in android app
 
 1.Clone APnglibrary as submodule.
 
-[submodule "APngLib"]		
-	path = APngLib		
-	url = git@git.linecorp.com:chen-jiulong/APnglibrary.git		
+		[submodule "APngLib"]		
+			path = APngLib		
+			url = git@git.linecorp.com:chen-jiulong/APnglibrary.git		
   
 2.Import APnglibrary
 
-dependencies {		
-    implementation fileTree(dir: "libs", include: ["*.jar"])		
-    implementation project(':APngLib')		
-}		
+		dependencies {		
+    		implementation fileTree(dir: "libs", include: ["*.jar"])		
+    		implementation project(':APngLib')		
+		}		
 
 3.Play the apng file in assets
 
-imageView.playAPngAsset(this, "blued.png", object : AnimationCallback {		
-                override fun onAnimationStart(drawable: APngDrawable) {		
-                    Log.d("APngActivity", "onAnimationStart ${drawable.file}")		
-                }		
-                override fun onAnimationRepeat(drawable: APngDrawable) {		
-                    Log.d("APngActivity", "onAnimationRepeat ${drawable.file}")		
-                }		
-                override fun onAnimationEnd(drawable: APngDrawable) {		
-                    Log.d("APngActivity", "onAnimationEnd ${drawable.file}")
-                }
-                override fun onAnimationCanceled(drawable: APngDrawable) {
-                    Log.d("APngActivity", "onAnimationCanceled ${drawable.file}")
-                }
-            })
+		imageView.playAPngAsset(this, "blued.png", object : AnimationCallback {		
+				override fun onAnimationStart(drawable: APngDrawable) {		
+				    Log.d("APngActivity", "onAnimationStart ${drawable.file}")		
+				}		
+				override fun onAnimationRepeat(drawable: APngDrawable) {		
+				    Log.d("APngActivity", "onAnimationRepeat ${drawable.file}")		
+				}		
+				override fun onAnimationEnd(drawable: APngDrawable) {		
+				    Log.d("APngActivity", "onAnimationEnd ${drawable.file}")
+				}
+				override fun onAnimationCanceled(drawable: APngDrawable) {
+				    Log.d("APngActivity", "onAnimationCanceled ${drawable.file}")
+				}
+			    })
 	    
-'''
 
 4.Play the apng file in sdcard
 
-imageView.playAPngFile(this, "mnt/sdcard/entrance1.png", object : AnimationCallback {
-                override fun onAnimationStart(drawable: APngDrawable) {
-                    Log.d("APngActivity", "onAnimationStart ${drawable.file}")
-                }
-                override fun onAnimationRepeat(drawable: APngDrawable) {
-                    Log.d("APngActivity", "onAnimationRepeat ${drawable.file}")		
-                }		
-                override fun onAnimationEnd(drawable: APngDrawable) {		
-                    Log.d("APngActivity", "onAnimationEnd ${drawable.file}")		
-                }		
-                override fun onAnimationCanceled(drawable: APngDrawable) {		
-                    Log.d("APngActivity", "onAnimationCanceled ${drawable.file}")		
-                }		
-            })		
+		imageView.playAPngFile(this, "mnt/sdcard/entrance1.png", object : AnimationCallback {
+				override fun onAnimationStart(drawable: APngDrawable) {
+				    Log.d("APngActivity", "onAnimationStart ${drawable.file}")
+				}
+				override fun onAnimationRepeat(drawable: APngDrawable) {
+				    Log.d("APngActivity", "onAnimationRepeat ${drawable.file}")		
+				}		
+				override fun onAnimationEnd(drawable: APngDrawable) {		
+				    Log.d("APngActivity", "onAnimationEnd ${drawable.file}")		
+				}		
+				override fun onAnimationCanceled(drawable: APngDrawable) {		
+				    Log.d("APngActivity", "onAnimationCanceled ${drawable.file}")		
+				}		
+			    })		
 
 5.Play the shared apng file 
 
-private val sharedHolder = APngHolderPool(lifecycle)		
+		private val sharedHolder = APngHolderPool(lifecycle)		
 
-imageView.playAPngAsset(this, "blued.png", object : AnimationCallback {		
-                override fun onAnimationStart(drawable: APngDrawable) {		
-                    Log.d("APngActivity", "onAnimationStart ${drawable.file}")		
-                }		
-                override fun onAnimationRepeat(drawable: APngDrawable) {		
-                    Log.d("APngActivity", "onAnimationRepeat ${drawable.file}")		
-                }		
-                override fun onAnimationEnd(drawable: APngDrawable) {		
-                    Log.d("APngActivity", "onAnimationEnd ${drawable.file}")		
-                }		
-                override fun onAnimationCanceled(drawable: APngDrawable) {		
-                    Log.d("APngActivity", "onAnimationCanceled ${drawable.file}")		
-                }		
-            }, sharedHolder)		
+		imageView.playAPngAsset(this, "blued.png", object : AnimationCallback {		
+				override fun onAnimationStart(drawable: APngDrawable) {		
+				    Log.d("APngActivity", "onAnimationStart ${drawable.file}")		
+				}		
+				override fun onAnimationRepeat(drawable: APngDrawable) {		
+				    Log.d("APngActivity", "onAnimationRepeat ${drawable.file}")		
+				}		
+				override fun onAnimationEnd(drawable: APngDrawable) {		
+				    Log.d("APngActivity", "onAnimationEnd ${drawable.file}")		
+				}		
+				override fun onAnimationCanceled(drawable: APngDrawable) {		
+				    Log.d("APngActivity", "onAnimationCanceled ${drawable.file}")		
+				}		
+			    }, sharedHolder)		
 
 6.Stop to play the apng file
 
-imageView.stopAPng()		
+	imageView.stopAPng()		
 
 7.Retart to play the apng file
 
- imageView.replayAPng()		
+ 	imageView.replayAPng()		
  
- 8.Clear the apng resource binded to the imageView
+8.Clear the apng resource binded to the imageView
  
- imageView.clearAPng()		
+ 	imageView.clearAPng()		
  
  
  
