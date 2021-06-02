@@ -29,6 +29,14 @@ android {
         exclude 'META-INF/LICENSE' // will not include LICENSE file
         exclude 'META-INF/INDEX.LIST' // will not include INDEX.LIST file
     }
+    ndkVersion '22.0.7026061'
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
 }
 
 dependencies {
